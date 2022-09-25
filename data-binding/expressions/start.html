@@ -12,6 +12,14 @@
 
   <div id="app">
     <h1>Data Binding: Expressions</h1>
+<p>message is {{msg}}</p>
+<p>arvutus {{count + 1}}</p>
+<p> teine arvutus 2 * 100 = {{2*100}}</p>
+<p>greetingu sisu on  {{ greeting  + ', Vue js!'}}</p>
+<p>reverse {{ msg.split(' ').reverse().join(' ') }}</p>
+<p>in stock {{product.inStock ? 'Yes' : 'No'}}</p>
+<p>new message: {{getNewMessage()}}</p>
+
   </div>
 
   <script>

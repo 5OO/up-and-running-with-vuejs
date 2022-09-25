@@ -16,10 +16,16 @@
 <body>
 
   <div id="app">
-    <h2>All Friends</h2>
+    <h2 v-if="friends !=0">All Friends</h2>
+    <ol>
+      <li v-for="friend in friends" v-bind:key="friend.username" @click="addToSelectedFriends(friend)" >
+        {{ friend.name}}  |  {{friend.username}}</li>
+    </ol>
 
-
-    <h2>Selected Friends</h2>
+    <h2 v-if="selectedFriends != 0">Selected Friends</h2>
+    <ol>
+      <li v-for="selectedFriend in selectedFriends">{{selectedFriend.name}} | {{selectedFriend.username}}</li>
+    </ol>
 
   </div>
 
@@ -41,6 +47,12 @@
             {name: 'Divya Sasidharan', username: 'shortdiv'}
           ],
           selectedFriends: []
+        }
+      },
+      methods: {
+        addToSelectedFriends(friend) {
+          this.selectedFriends.push(friend)
+          this.friends.splice(friend,1)
         }
       }
     });

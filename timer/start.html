@@ -17,7 +17,36 @@
 
   <script>
     new Vue({
-      el: '#app'
+      el: '#app',
+      data () {
+        return {
+
+        }
+      },
+      beforeCreate() {
+        console.log("before created !!!")
+      },
+      created() {
+        console.log(" created 111 !")
+      },
+      beforeMount(){
+        console.log(" this is before monut!")
+      },
+      mounted(){
+        console.log(" mounted !!! ")
+      },
+      beforeUpdate(){
+      console.log("  before update ")
+      },
+      updated(){
+      console.log(" updated it is")
+      },
+      beforeDestroy(){
+      console.log(" it is before destroy !!!!" )
+      },
+      destroyed(){
+      console.log( "it is destroyed!")
+      }
     });
   </script>
 
